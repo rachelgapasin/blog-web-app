@@ -109,7 +109,7 @@ let posts = [
     id: 0,
     title: "Our Day at the Mall",
     date: "June 7, 2024",
-    author: "Arnold Khublall",
+    author: "Arnold Khublall Jr.",
     image: "/images/nj-mall.jpg",
     description:
       "Today, I had an amazing time at the mall with my girlfriend. We started off with coffee and pastries at our favorite café, chatting and laughing over the latest trends. Wandering through stores, we tried on clothes, debated over shoes, and found the perfect accessories. The highlight was visiting the bookstore, where we picked out a couple of novels to enjoy together. We wrapped up our day with a delicious meal at the food court, sharing bites and stories. It was a simple day, but spending it with my girlfriend made it unforgettable.",

@@ -1,9 +1,9 @@
 <%- include("partials/navbar.ejs") %>
 
 <h1>EditSphere</h1>
-<div class="row">
+<div class="row posts-grid">
   <% for (let i = posts.length-1; i >= 0; i--) { %>
-    <div class="col-sm-4">
+    <div class="col-sm-6 col-md-4 col-xl-3 px-0">
       <a href="/posts/<%= posts[i].id %>" class="card">
         <img src="<%= posts[i].image %>" class="card-img-top" />
         <div class="card-body">

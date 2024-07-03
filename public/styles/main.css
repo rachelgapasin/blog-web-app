@@ -13,7 +13,6 @@
 .container {
   margin: 0 auto;
   max-width: 2200px;
-  padding: 0 10px;
 }
 
 .bg-body-tertiary {
@@ -40,6 +39,11 @@ a {
   text-decoration: none;
 }
 
+.posts-grid {
+  padding: 0 20px;
+}
+
+.col-sm-6,
 .col-sm-4 {
   margin-bottom: 20px;
 }
@@ -54,7 +58,7 @@ a {
   background-color: #d2d2d2;
   border-radius: 20px;
   cursor: pointer;
-  scale: 1.05;
+  scale: 1.005;
 }
 
 .card-img-top {
@@ -93,7 +97,7 @@ footer {
   text-align: center;
 }
 
-@media(max-width: 1199px) {
+@media (max-width: 1199px) {
   .container {
     padding: 0 5px;
   }
