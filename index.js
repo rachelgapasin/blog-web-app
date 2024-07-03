@@ -1,11 +1,24 @@
 import express from "express";
 import bodyParser from "body-parser";
+import multer from "multer";
+import path from "path";
 
 const app = express();
 const port = 3000;
 
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }));
+
+const storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, "public/images");
+  },
+  filename: function (req, file, cb) {
+    cb(null, Date.now() + path.extname(file.originalname));
+  },
+});
+
+const upload = multer({ storage: storage });
 
 app.set("view engine", "ejs");
 
@@ -27,7 +40,7 @@ app.get("/create", (req, res) => {
   res.render("create.ejs");
 });
 
-app.post("/submit", (req, res) => {
+app.post("/submit", upload.single("image"), (req, res) => {
   function formatDate(date) {
     const months = [
       "January",
@@ -55,7 +68,7 @@ app.post("/submit", (req, res) => {
     title: req.body.title,
     date: formatDate(new Date()),
     author: req.body.author,
-    image: "/images/ny-skyline.jpg",
+    image: req.file ? `/images/${req.file.filename}` : "/images/ny-skyline.jpg",
     description: req.body.description,
   });
   res.redirect("/");
@@ -69,11 +82,14 @@ app.get("/edit/:id", (req, res) => {
   });
 });
 
-app.post("/update/:id", (req, res) => {
+app.post("/update/:id", upload.single("image"), (req, res) => {
   const post = posts.find((x) => x.id == req.params.id);
   post.author = req.body.author;
   post.title = req.body.title;
   post.description = req.body.description;
+  if (req.file) {
+    post.image = `/images/${req.file.filename}`;
+  }
   res.redirect(`/posts/${req.params.id}`);
 });
 

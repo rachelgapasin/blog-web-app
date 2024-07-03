@@ -66,9 +66,8 @@
   }
 
   .post img {
-    all: unset;
     aspect-ratio: 16 / 9;
-    width: 100%;
+    border-radius: 0;
   }
 
   .post .details {
