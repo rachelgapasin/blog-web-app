@@ -1,0 +1,46 @@
+form {
+  border-radius: 10px;
+  display: block;
+  margin: 0px auto;
+  padding: 15px;
+}
+
+form .contact-box {
+  padding: 40px 30px;
+}
+
+form .label-input {
+  font-size: 18px;
+  margin: 0 0 10px;
+  width: 100%;
+}
+
+form .text-box {
+  border: 1px solid var(--primary-color);
+  border-radius: 7px;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  margin: 7px 0;
+  padding: 10px 15px;
+  width: 100%;
+}
+
+form .text-box:focus {
+  border: 1px solid var(--primary-color);
+  outline: 2px solid #a49ff9;
+}
+
+form .btn-primary {
+  border-radius: 7px;
+  font-weight: bold;
+  letter-spacing: 5px;
+  margin: 0;
+  text-transform: uppercase;
+  width: 100%;
+}
+
+form .contact-info-container {
+  margin: 30px 0;
+  text-align: center;
+}

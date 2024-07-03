@@ -1,0 +1,41 @@
+<%- include("partials/navbar.ejs") %>
+
+<h1>Edit Post</h1>
+<form action="/update/<%= post.id %>" method="POST">
+  <div class="label-input">
+    <label for="name">Name</label>
+    <input
+      type="text"
+      name="author"
+      class="text-box"
+      id="author"
+      value="<%= post.author %>"
+      required
+    />
+  </div>
+  <div class="label-input">
+    <label for="title">Title</label>
+    <input
+      type="text"
+      name="title"
+      class="text-box"
+      id="title"
+      value="<%= post.title %>"
+      maxlength="30"
+      required
+    />
+  </div>
+  <div class="label-input">
+    <label for="description">Description</label>
+    <textarea
+      name="description"
+      class="text-box"
+      id="description"
+      rows="8"
+      required
+    ><%= post.description %></textarea>
+  </div>
+  <input type="submit" value="Update" />
+</form>
+
+<%- include("partials/footer.ejs") %>

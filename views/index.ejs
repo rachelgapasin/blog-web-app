@@ -1,0 +1,22 @@
+<%- include("partials/navbar.ejs") %>
+
+<h1>EditSphere</h1>
+<div class="row">
+  <% for (let i = posts.length-1; i >= 0; i--) { %>
+    <div class="col-sm-4">
+      <a href="/posts/<%= posts[i].id %>" class="card">
+        <img src="<%= posts[i].image %>" class="card-img-top" />
+        <div class="card-body">
+          <div class="date"><%= posts[i].date %></div>
+          <h3 class="card-title"><%= posts[i].title %></h3>
+          <div class="author"><%= posts[i].author %></div>
+          <p class="card-text">
+            <%= posts[i].description ? posts[i].description.slice(0, 100) : "No description available" %>...
+          </p>
+        </div>
+      </a>
+    </div>
+  <% } %>
+</div>
+
+<%- include("partials/footer.ejs") %>

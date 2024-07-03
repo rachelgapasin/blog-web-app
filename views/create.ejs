@@ -1,0 +1,54 @@
+<%- include("partials/navbar.ejs") %>
+
+<h1>Create a New Post</h1>
+<!-- <form action="/submit" method="post" enctype="multipart/form-data"> -->
+<form action="/submit" method="POST">
+  <div class="label-input">
+    <label for="name">Name</label>
+    <input
+      type="text"
+      name="author"
+      class="text-box"
+      id="author"
+      placeholder="Rachel Gapasin (screen names are also acceptable!)"
+      required
+    />
+  </div>
+  <div class="label-input">
+    <label for="title">Title</label>
+    <input
+      type="text"
+      name="title"
+      class="text-box"
+      id="title"
+      placeholder="My Day at the Park"
+      maxlength="30"
+      required
+    />
+  </div>
+  <div class="label-input">
+    <label for="name">Description</label>
+    <textarea
+      name="description"
+      class="text-box"
+      id="description"
+      placeholder="Today, I had the best day at the park with my boyfriend! We got there when the sun reached its peak, so we found a nice little spot in the shade..."
+      rows="8"
+      required
+    ></textarea>
+  </div>
+  <!-- <div class="label-input">
+    <label for="image">Image</label>
+    <input type="image" name="image" id="image" />
+    <input
+      id="image"
+      type="file"
+      accept="image/png, image/jpeg, image/jpg"
+      name="image"
+      required
+    />
+  </div> -->
+  <input type="submit" value="Submit" />
+</form>
+
+<%- include("partials/footer.ejs") %>

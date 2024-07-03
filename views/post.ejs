@@ -1,0 +1,53 @@
+<%- include("partials/navbar.ejs") %>
+
+<% if (locals.post) { %>
+  <div class="post">
+    <div class="d-block d-md-none mb-3">
+      <img src="<%= post.image %>" />
+    </div>
+    <div class="row mt-4 mb-4 mt-md-5 mb-md-5">
+      <div class="col-md details"> 
+        <div class="date"><%= post.date %></div>
+        <h3 class="title"><%= post.title %></h3>
+        <span class="author me-5">👤 <%= post.author %></span>
+        <span class="post-buttons">
+          <button class="btn me-1">Edit</button> |
+          <form id="delete-post-form">
+            <input type="submit" value="Delete" class="btn ms-1" />
+          </form>
+        </span>
+      </div>
+      <div class="col-md-6 d-none d-md-block">
+        <img src="<%= post.image %>" />
+      </div>  
+    </div>
+    <p class="description"><%= post.description %></p>
+  </div>
+
+  <script>
+    document.getElementById('delete-post-form').addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      fetch('/posts/<%= post.id %>', {
+        method: 'DELETE',
+      })
+      .then(response => {
+        if (response.redirected) {
+          window.location.href = response.url;
+        } else if (response.ok) {
+          window.location.href = '/';
+        } else {
+          alert('Failed to delete the post');
+        }
+      })
+    });
+  </script>
+<% } else { %>
+  <div class="post-not-found">
+    <h1>Post not found :(</h1>
+    <p>Sorry, the post you are looking for does not exist.</p>
+  </div>
+<% } %>
+
+<%- include("partials/footer.ejs") %>
+
