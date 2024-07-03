@@ -15,7 +15,7 @@ form .label-input {
   width: 100%;
 }
 
-form .text-box {
+form .text-box, form .image-input {
   border: 1px solid var(--primary-color);
   border-radius: 7px;
   box-sizing: border-box;
@@ -31,16 +31,20 @@ form .text-box:focus {
   outline: 2px solid #a49ff9;
 }
 
-form .btn-primary {
+form .btn-submit {
+  background-color: var(--primary-color);
+  border: 1px solid var(--primary-color);
   border-radius: 7px;
-  font-weight: bold;
-  letter-spacing: 5px;
-  margin: 0;
-  text-transform: uppercase;
-  width: 100%;
+  color: #fff;
+  display: block;
+  letter-spacing: 1px;
+  margin-left: auto;
+  padding: 10px 15px;
+  transition: all 200ms ease-in-out;
 }
 
-form .contact-info-container {
-  margin: 30px 0;
-  text-align: center;
+form .btn-submit:hover {
+  background-color: var(--secondary-color);
+  border: 1px solid var(--primary-color);
+  color: var(--primary-color);
 }
